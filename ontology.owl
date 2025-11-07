@@ -187,7 +187,6 @@
     <!-- http://www.semanticweb.org/dataact#compliesWith -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dataact#compliesWith">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/dataact#InteroperabilityStandard"/>
         <rdfs:comment>Article 34-35 - Interoperability compliance</rdfs:comment>
         <rdfs:label>complies with</rdfs:label>
@@ -424,6 +423,16 @@
     
 
 
+    <!-- http://www.semanticweb.org/dataact#hasPartyType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dataact#hasPartyType">
+        <rdfs:domain rdf:resource="https://www.w3.org/ns/odrl/2/Party"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/dataact#PartyType"/>
+        <rdfs:label>has party type</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/dataact#hasRightHolder -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dataact#hasRightHolder">
@@ -532,13 +541,13 @@
     
 
 
-    <!-- http://www.semanticweb.org/dataact#performsAction -->
+    <!-- http://www.semanticweb.org/dataact#performsLegalAction -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dataact#performsAction">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dataact#performsLegalAction">
         <rdfs:domain rdf:resource="https://www.w3.org/ns/odrl/2/Party"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/dataact#LegalAction"/>
         <rdfs:comment>LKIF: Actor performs a legal action</rdfs:comment>
-        <rdfs:label>performs action</rdfs:label>
+        <rdfs:label>performs legal action</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -895,7 +904,6 @@
     <!-- http://www.semanticweb.org/dataact#hasDescription -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dataact#hasDescription">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Human-readable description</rdfs:comment>
         <rdfs:label>has description</rdfs:label>
@@ -1046,7 +1054,6 @@
     <!-- http://www.estrellaproject.org/lkif-core/expression.owl#Legal_Document -->
 
     <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/expression.owl#Legal_Document">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:comment>A legal document is a document bearing norms or normative statements. By virtue of this definition the norm-as-propositional-attitude is reified as norm-as proposition. In other words, the norm being expressed through the legal source is an expression of the propositional attitude.</rdfs:comment>
         <rdfs:label>Legal Document</rdfs:label>
     </owl:Class>
@@ -1056,7 +1063,6 @@
     <!-- http://www.estrellaproject.org/lkif-core/norm.owl#Right -->
 
     <owl:Class rdf:about="http://www.estrellaproject.org/lkif-core/norm.owl#Right">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:comment>LKIF: Legal entitlement (Hohfeldian)</rdfs:comment>
         <rdfs:label>Right</rdfs:label>
     </owl:Class>
@@ -1166,7 +1172,6 @@
     <!-- http://www.semanticweb.org/dataact#ContractualTerm -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dataact#ContractualTerm">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:comment>Provision in agreement</rdfs:comment>
         <rdfs:label>Contractual Term</rdfs:label>
     </owl:Class>
@@ -1183,21 +1188,11 @@
     
 
 
-    <!-- http://www.semanticweb.org/dataact#DataAccessAction -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/dataact#DataAccessAction">
-        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/odrl/2/Action"/>
-        <rdfs:comment>Action of accessing or providing data</rdfs:comment>
-        <rdfs:label>Data Access Action</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/dataact#DataAccessRequest -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dataact#DataAccessRequest">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#LegalAction"/>
-        <rdfs:comment>LKIF: Action of requesting data access</rdfs:comment>
+        <rdfs:comment></rdfs:comment>
         <rdfs:label>Data Access Request</rdfs:label>
     </owl:Class>
     
@@ -1216,7 +1211,6 @@
     <!-- http://www.semanticweb.org/dataact#DataCategory -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dataact#DataCategory">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:comment>Data type classification</rdfs:comment>
         <rdfs:label>Data Category</rdfs:label>
     </owl:Class>
@@ -1267,7 +1261,6 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dataact#DataProvision">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#LegalAction"/>
-        <rdfs:comment>LKIF: Action of providing data</rdfs:comment>
         <rdfs:label>Data Provision</rdfs:label>
     </owl:Class>
     
@@ -1287,7 +1280,6 @@
     <!-- http://www.semanticweb.org/dataact#DataRequest -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dataact#DataRequest">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:comment>Article 4, 5, 14 - Formal request</rdfs:comment>
         <rdfs:label>Data Request</rdfs:label>
     </owl:Class>
@@ -1297,19 +1289,8 @@
     <!-- http://www.semanticweb.org/dataact#DataSharing -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dataact#DataSharing">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:comment>Instance of data being shared between parties</rdfs:comment>
         <rdfs:label>Data Sharing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/dataact#DataSharingAction -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/dataact#DataSharingAction">
-        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/odrl/2/Action"/>
-        <rdfs:comment>Action of sharing data with another party</rdfs:comment>
-        <rdfs:label>Data Sharing Action</rdfs:label>
     </owl:Class>
     
 
@@ -1328,7 +1309,6 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dataact#DataSharingAuthorization">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#LegalAction"/>
-        <rdfs:comment>LKIF: User authorizes B2B sharing per Article 8(4)</rdfs:comment>
         <rdfs:label>Data Sharing Authorization</rdfs:label>
     </owl:Class>
     
@@ -1347,7 +1327,6 @@
     <!-- http://www.semanticweb.org/dataact#DataSpace -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dataact#DataSpace">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:comment>Article 33 - Data sharing space</rdfs:comment>
         <rdfs:label>Data Space</rdfs:label>
     </owl:Class>
@@ -1357,9 +1336,17 @@
     <!-- http://www.semanticweb.org/dataact#Duty -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dataact#Duty">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:comment>LKIF: Legal obligation correlating to right</rdfs:comment>
         <rdfs:label>Duty</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dataact#Enterprise -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dataact#Enterprise">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#PartyType"/>
+        <rdfs:label>Enterprise</rdfs:label>
     </owl:Class>
     
 
@@ -1374,19 +1361,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/dataact#Entity -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/dataact#Entity">
-        <rdfs:comment>Abstract root for all Data Act ontology resources</rdfs:comment>
-        <rdfs:label>Entity</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/dataact#ExceptionalNeed -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dataact#ExceptionalNeed">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:comment>Article 15 - B2G basis</rdfs:comment>
         <rdfs:label>Exceptional Need</rdfs:label>
     </owl:Class>
@@ -1396,7 +1373,6 @@
     <!-- http://www.semanticweb.org/dataact#FRANDCondition -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dataact#FRANDCondition">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:comment>Article 8-12 - FRAND conditions</rdfs:comment>
         <rdfs:label>FRAND Condition</rdfs:label>
     </owl:Class>
@@ -1416,9 +1392,17 @@
     <!-- http://www.semanticweb.org/dataact#InteroperabilityStandard -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dataact#InteroperabilityStandard">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:comment>Article 34-35 - Standard</rdfs:comment>
         <rdfs:label>Interoperability Standard</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dataact#LargeEnterprise -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dataact#LargeEnterprise">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Enterprise"/>
+        <rdfs:label>Large Enterprise</rdfs:label>
     </owl:Class>
     
 
@@ -1426,8 +1410,7 @@
     <!-- http://www.semanticweb.org/dataact#LegalAction -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dataact#LegalAction">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
-        <rdfs:comment>LKIF: Action with legal consequences</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/odrl/2/Action"/>
         <rdfs:label>Legal Action</rdfs:label>
     </owl:Class>
     
@@ -1436,7 +1419,6 @@
     <!-- http://www.semanticweb.org/dataact#LegalEffect -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dataact#LegalEffect">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:comment>Legal consequence when rule fires</rdfs:comment>
         <rdfs:label>Legal Effect</rdfs:label>
     </owl:Class>
@@ -1446,7 +1428,6 @@
     <!-- http://www.semanticweb.org/dataact#LegalRelationship -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dataact#LegalRelationship">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:comment>LKIF: Relationship between legal parties</rdfs:comment>
         <rdfs:label>Legal Relationship</rdfs:label>
     </owl:Class>
@@ -1456,7 +1437,6 @@
     <!-- http://www.semanticweb.org/dataact#LegalRule -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dataact#LegalRule">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:comment>Formal representation of a legal rule from the Data Act</rdfs:comment>
         <rdfs:label>Legal Rule</rdfs:label>
     </owl:Class>
@@ -1466,7 +1446,6 @@
     <!-- http://www.semanticweb.org/dataact#LegalSource -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dataact#LegalSource">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:comment>Source document (regulation, article, recital)</rdfs:comment>
         <rdfs:label>Legal Source</rdfs:label>
     </owl:Class>
@@ -1498,8 +1477,24 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dataact#Microenterprise">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#SME"/>
-        <rdfs:comment>Smallest category of SME</rdfs:comment>
         <rdfs:label>Microenterprise</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dataact#NaturalPerson -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dataact#NaturalPerson">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#PartyType"/>
+        <rdfs:label>Natural Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dataact#PartyType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dataact#PartyType">
+        <rdfs:label>Party Type</rdfs:label>
     </owl:Class>
     
 
@@ -1517,7 +1512,7 @@
     <!-- http://www.semanticweb.org/dataact#PublicSectorBody -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dataact#PublicSectorBody">
-        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/odrl/2/Party"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#PartyType"/>
         <rdfs:comment>Article 2(28) - National/regional/local authority</rdfs:comment>
         <rdfs:label>Public Sector Body</rdfs:label>
     </owl:Class>
@@ -1527,7 +1522,6 @@
     <!-- http://www.semanticweb.org/dataact#Qualification -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dataact#Qualification">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:comment>LKIF: Condition or exception qualifying norm</rdfs:comment>
         <rdfs:label>Qualification</rdfs:label>
     </owl:Class>
@@ -1588,7 +1582,6 @@
     <!-- http://www.semanticweb.org/dataact#RuleCondition -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dataact#RuleCondition">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:comment>Condition in rule antecedent or exception</rdfs:comment>
         <rdfs:label>Rule Condition</rdfs:label>
     </owl:Class>
@@ -1598,8 +1591,7 @@
     <!-- http://www.semanticweb.org/dataact#SME -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dataact#SME">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#EnterpriseUser"/>
-        <rdfs:comment>Small and Medium-sized Enterprise</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Enterprise"/>
         <rdfs:label>SME</rdfs:label>
     </owl:Class>
     
@@ -1618,7 +1610,6 @@
     <!-- http://www.semanticweb.org/dataact#SmartContract -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dataact#SmartContract">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:comment>Article 36 - Automated execution</rdfs:comment>
         <rdfs:label>Smart Contract</rdfs:label>
     </owl:Class>
@@ -1628,7 +1619,6 @@
     <!-- http://www.semanticweb.org/dataact#TemporalEntity -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dataact#TemporalEntity">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:comment>LKIF: Time point or interval</rdfs:comment>
         <rdfs:label>Temporal Entity</rdfs:label>
     </owl:Class>
@@ -1668,7 +1658,6 @@
     <!-- http://www.semanticweb.org/dataact#TradeSecret -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dataact#TradeSecret">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:comment>Article 8(6) - Protected information</rdfs:comment>
         <rdfs:label>Trade Secret</rdfs:label>
     </owl:Class>
@@ -1688,7 +1677,7 @@
     <!-- http://www.semanticweb.org/dataact#UnionBody -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dataact#UnionBody">
-        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/odrl/2/Party"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#PublicSectorBody"/>
         <rdfs:comment>Article 2(27) - EU body or agency</rdfs:comment>
         <rdfs:label>Union Body</rdfs:label>
     </owl:Class>
@@ -1718,7 +1707,6 @@
     <!-- https://w3c.github.io/dpv/2.2/dpv/#Consent -->
 
     <owl:Class rdf:about="https://w3c.github.io/dpv/2.2/dpv/#Consent">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:comment>Consent of the Data Subject for specified process or activity</rdfs:comment>
         <rdfs:label>Consent</rdfs:label>
     </owl:Class>
@@ -1728,7 +1716,6 @@
     <!-- https://w3c.github.io/dpv/2.2/dpv/#DataSubject -->
 
     <owl:Class rdf:about="https://w3c.github.io/dpv/2.2/dpv/#DataSubject">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:comment>The individual (or category of individuals) whose personal data is being processed</rdfs:comment>
         <rdfs:label>Data Subject</rdfs:label>
     </owl:Class>
@@ -1758,7 +1745,6 @@
     <!-- https://www.w3.org/ns/odrl/2/Action -->
 
     <owl:Class rdf:about="https://www.w3.org/ns/odrl/2/Action">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:comment>An operation on an Asset.</rdfs:comment>
         <rdfs:label>Action</rdfs:label>
     </owl:Class>
@@ -1768,7 +1754,6 @@
     <!-- https://www.w3.org/ns/odrl/2/Agreement -->
 
     <owl:Class rdf:about="https://www.w3.org/ns/odrl/2/Agreement">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:comment>A Policy that grants the assignee a Rule over an Asset from an assigner.</rdfs:comment>
         <rdfs:label>Agreement</rdfs:label>
     </owl:Class>
@@ -1778,7 +1763,6 @@
     <!-- https://www.w3.org/ns/odrl/2/Asset -->
 
     <owl:Class rdf:about="https://www.w3.org/ns/odrl/2/Asset">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:comment>Abstract class for products, services, and data</rdfs:comment>
         <rdfs:label>Asset</rdfs:label>
     </owl:Class>
@@ -1798,7 +1782,6 @@
     <!-- https://www.w3.org/ns/odrl/2/Party -->
 
     <owl:Class rdf:about="https://www.w3.org/ns/odrl/2/Party">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:comment>An entity or a collection of entities that undertake Roles in a Rule.</rdfs:comment>
         <rdfs:label>Party</rdfs:label>
     </owl:Class>
@@ -1828,7 +1811,6 @@
     <!-- https://www.w3.org/ns/odrl/2/Rule -->
 
     <owl:Class rdf:about="https://www.w3.org/ns/odrl/2/Rule">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:comment>An abstract concept that represents the common characteristics of Permissions, Prohibitions, and Duties.</rdfs:comment>
         <rdfs:label>Rule</rdfs:label>
     </owl:Class>
@@ -1838,7 +1820,6 @@
     <!-- https://www.w3.org/ns/odrl/2/purpose -->
 
     <owl:Class rdf:about="https://www.w3.org/ns/odrl/2/purpose">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dataact#Entity"/>
         <rdfs:comment>A defined purpose for exercising the action of the Rule.</rdfs:comment>
         <rdfs:label>Purpose</rdfs:label>
     </owl:Class>
@@ -1853,6 +1834,15 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://www.semanticweb.org/dataact#DataProvisionOfThermostatDataToALice -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dataact#DataProvisionOfThermostatDataToALice">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dataact#DataProvision"/>
+        <rdfs:label>Data Provision Of Thermostat Data To Alice</rdfs:label>
+    </owl:NamedIndividual>
     
 
 
@@ -1908,6 +1898,8 @@
         <designatesThirdParty rdf:resource="http://www.semanticweb.org/dataact#energyOptimizationService"/>
         <hasAccessRight rdf:resource="http://www.semanticweb.org/dataact#aliceAccessRight"/>
         <isSubjectOf rdf:resource="http://www.semanticweb.org/dataact#aliceTemperatureData"/>
+        <ownsOrUses rdf:resource="http://www.semanticweb.org/dataact#smartThermostat1"/>
+        <requestsAccessTo rdf:resource="http://www.semanticweb.org/dataact#aliceTemperatureData"/>
         <rdfs:label>Alice</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2001,7 +1993,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dataact#autoRepair">
         <rdf:type rdf:resource="http://www.semanticweb.org/dataact#AftermarketServiceProvider"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/dataact#SME"/>
         <rdfs:label>AutoRepair Ltd</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2031,7 +2022,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dataact#bob">
         <rdf:type rdf:resource="http://www.semanticweb.org/dataact#EnterpriseUser"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/dataact#SME"/>
         <rdfs:label>Bob (SME)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2262,7 +2252,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dataact#mantenimientoTech">
         <rdf:type rdf:resource="http://www.semanticweb.org/dataact#AftermarketServiceProvider"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/dataact#SME"/>
         <rdfs:label>MantenimientoTech SL</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2281,7 +2270,6 @@
     <!-- http://www.semanticweb.org/dataact#provideDataAction -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dataact#provideDataAction">
-        <rdf:type rdf:resource="http://www.semanticweb.org/dataact#DataAccessAction"/>
         <hasDescription>Make data available to requestor</hasDescription>
         <rdfs:label>Provide Data Action</rdfs:label>
     </owl:NamedIndividual>
@@ -2291,7 +2279,6 @@
     <!-- http://www.semanticweb.org/dataact#refuseDataAccessAction -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dataact#refuseDataAccessAction">
-        <rdf:type rdf:resource="http://www.semanticweb.org/dataact#DataAccessAction"/>
         <hasDescription>Refuse to provide data</hasDescription>
         <rdfs:label>Refuse Data Access Action</rdfs:label>
     </owl:NamedIndividual>
@@ -2324,7 +2311,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dataact#techFix">
         <rdf:type rdf:resource="http://www.semanticweb.org/dataact#AftermarketServiceProvider"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/dataact#SME"/>
         <rdfs:label>TechFix GmbH</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2334,6 +2320,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dataact#thermostatManufacturer">
         <rdf:type rdf:resource="http://www.semanticweb.org/dataact#Manufacturer"/>
+        <performsLegalAction rdf:resource="http://www.semanticweb.org/dataact#DataProvisionOfThermostatDataToALice"/>
         <dpv:hasData rdf:resource="http://www.semanticweb.org/dataact#aliceTemperatureData"/>
         <dpv:hasRecipient rdf:resource="http://www.semanticweb.org/dataact#energyOptimizationService"/>
         <rdfs:label>Thermostat Manufacturer</rdfs:label>
