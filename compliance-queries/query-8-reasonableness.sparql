@@ -1,0 +1,18 @@
+# CHECK 8: FRAND Reasonableness (Article 8.1)
+# Find agreements with unreasonable terms
+# Expected: Empty result in test data
+
+PREFIX dataact: <http://www.semanticweb.org/dataact#>
+
+SELECT ?agreement ?contract ?reasonable
+WHERE {
+  ?agreement a dataact:B2BDataSharing ;
+             dataact:governedBy ?contract .
+  
+  ?contract dataact:subjectToFRAND ?frand .
+  
+  ?frand dataact:isReasonable ?reasonable .
+  
+  # Filter for unreasonable terms
+  FILTER(?reasonable = false)
+}

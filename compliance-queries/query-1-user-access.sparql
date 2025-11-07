@@ -1,0 +1,26 @@
+# CHECK 1: User Access Right Fulfillment (Article 4.1)
+# Find users who requested data but didn't receive it
+# Expected: Empty result if compliant
+
+PREFIX dataact: <http://www.semanticweb.org/dataact#>
+PREFIX dpv: <https://w3c.github.io/dpv/2.2/dpv/#>
+
+SELECT ?user ?data ?holder
+WHERE {
+  # User requested data
+  ?user a dataact:User ;
+        dataact:requestsAccessTo ?data .
+  
+  # User owns/uses product generating data
+  ?user dataact:ownsOrUses ?product .
+  ?data dataact:isGeneratedBy ?product .
+  
+  # Data holder has the data
+  ?holder dpv:hasData ?data .
+  
+  # Check if provision action exists
+  FILTER NOT EXISTS {
+    ?holder dataact:performsAction ?action .
+    ?action a dataact:DataProvision .
+  }
+}

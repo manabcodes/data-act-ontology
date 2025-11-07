@@ -1,0 +1,23 @@
+# CHECK 7: Third-Party Designation (Article 5.1)
+# Verify user can designate third parties
+# Expected: alice → energyOptimizationService chain
+
+PREFIX dataact: <http://www.semanticweb.org/dataact#>
+PREFIX dpv: <https://w3c.github.io/dpv/2.2/dpv/#>
+
+SELECT ?user ?thirdParty ?holder ?data
+WHERE {
+  # User designates third party
+  ?user a dataact:User ;
+        dataact:designatesThirdParty ?thirdParty .
+  
+  ?thirdParty a dataact:ThirdParty .
+  
+  # Data holder provides to third party
+  ?holder dpv:hasRecipient ?thirdParty ;
+          dpv:hasData ?data .
+  
+  # Data comes from user's product
+  ?data dataact:isGeneratedBy ?product .
+  ?user dataact:ownsOrUses ?product .
+}

@@ -1,0 +1,15 @@
+# CHECK 2: Machine Readability (Article 3.1)
+# Find data that is NOT machine-readable
+# Expected: legacyData with isMachineReadable = false
+
+PREFIX dataact: <http://www.semanticweb.org/dataact#>
+
+SELECT ?data ?product ?readable
+WHERE {
+  ?data a dataact:ProductData ;
+        dataact:isMachineReadable ?readable ;
+        dataact:isGeneratedBy ?product .
+  
+  # Filter for non-machine-readable data
+  FILTER(?readable = false)
+}

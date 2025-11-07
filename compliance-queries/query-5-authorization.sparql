@@ -1,0 +1,17 @@
+# CHECK 5: User Authorization (Article 8.4)
+# Find B2B agreements missing user authorization
+# Expected: agreement999
+
+PREFIX dataact: <http://www.semanticweb.org/dataact#>
+
+SELECT ?agreement ?contract
+WHERE {
+  ?agreement a dataact:B2BDataSharing ;
+             dataact:governedBy ?contract .
+  
+  # Missing authorization
+  FILTER NOT EXISTS {
+    ?agreement dataact:authorizedBy ?user .
+    ?user a dataact:User .
+  }
+}
