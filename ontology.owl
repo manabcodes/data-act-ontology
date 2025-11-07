@@ -2085,6 +2085,26 @@
     
 
 
+    <!-- http://www.semanticweb.org/dataact#b2cAgreement1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dataact#b2cAgreement1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dataact#DataSharingAgreement"/>
+        <dpv:hasRecipient rdf:resource="http://www.semanticweb.org/dataact#alice"/>
+        <rdfs:label>B2C Agreement 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dataact#b2cDataSharing1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dataact#b2cDataSharing1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dataact#B2CDataSharing"/>
+        <governedBy rdf:resource="http://www.semanticweb.org/dataact#b2cAgreement1"/>
+        <rdfs:label>B2C Data Sharing 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/dataact#b2gDataRequest -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dataact#b2gDataRequest">
