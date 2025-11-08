@@ -1,11 +1,4 @@
-# ============================================================
-# COMPLIANCE CHECK: Article 19(2)(a) - Prohibition on Competitive Use (B2G)
-# ============================================================
-# Regulation: EU Data Act (Regulation 2023/2854)
-# Article: 19(2)(a) - Public body restrictions on data use
-# Type: B2G (Business-to-Government)
-# Deontic: Prohibition (public body MUST NOT compete)
-# ============================================================
+
 
 PREFIX dataact: <http://www.semanticweb.org/dataact#>
 PREFIX dpv: <https://w3c.github.io/dpv/2.2/dpv/#>
