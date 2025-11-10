@@ -41,6 +41,35 @@
     
 
 
+    <!-- http://www.semanticweb.org/dataact#DataSharingTypesCollection -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dataact#DataSharingTypesCollection">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+        <skos:member rdf:resource="http://www.semanticweb.org/dataact#B2BDataSharing"/>
+        <skos:member rdf:resource="http://www.semanticweb.org/dataact#B2CDataSharing"/>
+        <skos:member rdf:resource="http://www.semanticweb.org/dataact#B2GDataSharing"/>
+        <skos:prefLabel xml:lang="en">Data Sharing Types</skos:prefLabel>
+        <skos:prefLabel xml:lang="es">Tipos de Compartición de Datos</skos:prefLabel>
+        <skos:scopeNote xml:lang="en">Collection of the three main data sharing modalities defined in the EU Data Act: Business-to-Consumer (Chapter II), Business-to-Business (Chapter III), and Business-to-Government (Chapter V). These represent mutually exclusive pathways for data access and sharing.</skos:scopeNote>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dataact#FRANDComplianceCollection -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dataact#FRANDComplianceCollection">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+        <skos:member rdf:resource="http://www.semanticweb.org/dataact#DataSharingAgreement"/>
+        <skos:member rdf:resource="http://www.semanticweb.org/dataact#FRANDCondition"/>
+        <skos:member rdf:resource="http://www.semanticweb.org/dataact#FRANDTerms"/>
+        <skos:member rdf:resource="http://www.semanticweb.org/dataact#UnfairTerm"/>
+        <skos:prefLabel xml:lang="en">FRAND Compliance Requirements</skos:prefLabel>
+        <skos:prefLabel xml:lang="es">Requisitos de Cumplimiento FRAND</skos:prefLabel>
+        <skos:scopeNote xml:lang="en">Elements required for Fair, Reasonable, And Non-Discriminatory (FRAND) compliance in B2B data sharing (Article 8). Data sharing agreements must meet FRAND criteria, and terms that fail these requirements are considered unfair under Article 13.</skos:scopeNote>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/dataact#HealthAuthority -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dataact#HealthAuthority">
@@ -48,6 +77,37 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/dataact#PublicSectorBody"/>
         <performsAction rdf:resource="http://www.semanticweb.org/dataact#UsesDataToDevelopCompetingProduct1"/>
         <rdfs:label>Health Authority</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dataact#LegalObligationsCollection -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dataact#LegalObligationsCollection">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+        <skos:member rdf:resource="http://www.semanticweb.org/dataact#ContractualTerm"/>
+        <skos:member rdf:resource="http://www.semanticweb.org/dataact#FRANDCondition"/>
+        <skos:member rdf:resource="http://www.semanticweb.org/dataact#InteroperabilityStandard"/>
+        <skos:member rdf:resource="https://www.w3.org/ns/odrl/2/Duty"/>
+        <skos:prefLabel xml:lang="en">Legal Obligations for Compliance</skos:prefLabel>
+        <skos:prefLabel xml:lang="es">Obligaciones Legales para Cumplimiento</skos:prefLabel>
+        <skos:scopeNote xml:lang="en">Key obligations imposed by the Data Act on data holders and processing services. Data holders must make data available under FRAND terms (Articles 8-12), respond to access requests within specified timeframes (Article 4), and ensure data portability.</skos:scopeNote>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dataact#PartyRolesCollection -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dataact#PartyRolesCollection">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+        <skos:member rdf:resource="http://www.semanticweb.org/dataact#DataHolder"/>
+        <skos:member rdf:resource="http://www.semanticweb.org/dataact#DataRecipient"/>
+        <skos:member rdf:resource="http://www.semanticweb.org/dataact#Manufacturer"/>
+        <skos:member rdf:resource="http://www.semanticweb.org/dataact#ThirdParty"/>
+        <skos:member rdf:resource="http://www.semanticweb.org/dataact#User"/>
+        <skos:prefLabel xml:lang="en">Party Roles in Data Sharing</skos:prefLabel>
+        <skos:prefLabel xml:lang="es">Roles de Partes en Compartición de Datos</skos:prefLabel>
+        <skos:scopeNote xml:lang="en">Collection of key stakeholder roles defined in the Data Act. Users have rights to access data (Article 4), Data Holders control access to data (Article 2(13)), and Data Recipients receive data subject to FRAND terms.</skos:scopeNote>
     </owl:NamedIndividual>
     
 
