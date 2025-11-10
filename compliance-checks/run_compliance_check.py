@@ -24,7 +24,7 @@ def main():
     # Initialize checker
     try:
         checker = DataActComplianceChecker(
-            base_ontology_path="../dataact-ontology.owl",
+            base_ontology_path="../data_act_ontology.owl",
             queries_dir="queries"
         )
         print("✅ Compliance checker initialized successfully")
